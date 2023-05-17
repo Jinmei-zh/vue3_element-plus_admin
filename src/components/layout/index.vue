@@ -1,12 +1,13 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header><header-menu></header-menu> </el-header>
+      <el-aside width="200px">
+        <sidebar></sidebar>
+      </el-aside>
       <el-container>
-        <el-aside width="180px">
-          <sidebar></sidebar>
-        </el-aside>
+        <el-header><header-menu></header-menu> </el-header>
         <el-main>
+          <!-- <breadcrumb></breadcrumb> -->
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -15,10 +16,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { Menu as IconMenu, Message, Setting } from "@element-plus/icons-vue";
-import sidebar from "./Sidebar";
+import sidebar from "./sidebar";
 import headerMenu from "./Sidebar/headerMenu.vue";
+import breadcrumb from "./breadcrumb.vue";
 </script>
 
 <style scoped>

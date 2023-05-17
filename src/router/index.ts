@@ -9,6 +9,19 @@ export const routes = [
     redirect: "/home",
     children: [
       {
+        path: "table",
+        name: "table",
+        meta: { name: "表格", icon: "local" },
+        children: [
+          {
+            path: "list",
+            name: "list",
+            meta: { name: "列表", icon: "edit" },
+            component: () => import("../views/tables/index.vue"),
+          },
+        ]
+    },
+      {
         path: "home",
         name: "home",
         meta: { name: "主页", icon: "local" },

@@ -1,5 +1,7 @@
 <template>
-  <el-menu><item :route="showRoutes"></item> </el-menu>
+  <el-menu style="height:100vh" :router="true">
+    <item :route="showRoutes"></item>
+  </el-menu>
 </template>
 
 <script lang="ts" setup>
@@ -10,8 +12,8 @@ const showRoutes = computed(() => {
   return routes[0].children;
 });
 
-const handleOpen = () => {};
-const handleClose = () => {};
+const handleOpen = () => { };
+const handleClose = () => { };
 </script>
 
 <style lang="scss" scoped></style>
