@@ -19,58 +19,62 @@
       <el-table-column prop="name" label="Name" width="180" />
       <el-table-column prop="address" label="Address" />
     </el-table>
-    <el-pagination background v-model:current-page="pages.currentPage" v-model:page-size="pages.pageSize"
-      :page-sizes="[20, 50, 100, 150, 200]" layout="total, sizes, prev, pager, next, jumper" :total="pages.total"
-      @size-change="handleSizeChange" @current-change="handleCurrentChange" />
+    <el-pagination
+      background
+      v-model:current-page="pages.currentPage"
+      v-model:page-size="pages.pageSize"
+      :page-sizes="[20, 50, 100, 150, 200]"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="pages.total"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+    />
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 // 查询表单
 const formInline = reactive({
-  user: '',
-  region: '',
-})
-const onSubmit = () => {
-
-}
-
+  user: "",
+  region: "",
+});
+const onSubmit = () => {};
 
 // 表格
 const pages = reactive({
   total: 400,
   currentPage: 1,
-  pageSize: 20
-})
+  pageSize: 20,
+});
 const handleSizeChange = (size: number) => {
-  pages.pageSize = size
-}
+  pages.pageSize = size;
+};
 const handleCurrentChange = (page: number) => {
-  pages.currentPage = page
-}
+  pages.currentPage = page;
+};
 
 const tableData = [
   {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: "2016-05-03",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: '2016-05-02',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: "2016-05-02",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: '2016-05-04',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: "2016-05-04",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles',
+    date: "2016-05-01",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
   },
-]
+];
 </script>
 
 <style lang="scss"></style>

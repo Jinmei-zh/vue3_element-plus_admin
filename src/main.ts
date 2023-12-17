@@ -5,7 +5,7 @@ import ElementPlus from "element-plus";
 import zhCn from "element-plus/dist/locale/zh-cn.mjs";
 import "element-plus/dist/index.css";
 import "./assets/main.css";
-import pinia from '@/stores'
+import pinia from "@/stores";
 
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
