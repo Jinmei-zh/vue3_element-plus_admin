@@ -79,6 +79,12 @@ export const routes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    path: "/login",
+    name: "login",
+    meta: { name: "登陆", icon: "edit" },
+    component: () => import("@/views/Login.vue"),
+  },
 ];
 
 const router = createRouter({
