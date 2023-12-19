@@ -6,6 +6,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { viteMockServe } from "vite-plugin-mock";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,8 +16,13 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    viteMockServe({
+      logger: false,
+      mockPath: "mock/",
+      watchFiles: true,
+    }),
     AutoImport({
-      imports: ["vue", "vue-router", "pinia"], // 自动导入
+      imports: ["vue", "vue-router", "pinia"],
       dts: "types/auto-import.d.ts",
     }),
     Components({

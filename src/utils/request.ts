@@ -1,11 +1,12 @@
 // src/utils/request.ts
-import axios, { AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import axios from "axios";
+import type { AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { ElMessage } from "element-plus";
 import { getToken, removeToken } from "@/utils/auth";
 
 //创建axios实例对象，添加全局配置
 const service = axios.create({
-  baseURL: "/api",
+  baseURL: import.meta.env.VITE_BASE_API,
   timeout: 8000,
 });
 

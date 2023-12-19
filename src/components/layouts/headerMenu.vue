@@ -35,13 +35,16 @@
 import { useAppStore } from "@/stores";
 import { storeToRefs } from "pinia";
 import { ArrowRight } from "@element-plus/icons-vue";
+import { removeToken } from "@/utils/auth";
 
 // const sidebar = mapState(useAppStore, ["sidebar"]);
+const router = useRouter();
 const appStore = useAppStore();
 const { sidebar } = storeToRefs(appStore);
 
-const logout = () => {
-  console.log("logout");
+const logout = (item) => {
+  removeToken();
+  router.push("/login");
 };
 </script>
 <style less="scss" scoped>

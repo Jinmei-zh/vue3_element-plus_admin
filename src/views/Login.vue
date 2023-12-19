@@ -15,7 +15,11 @@
           ></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input v-model="form.password" placeholder="请输入密码"></el-input>
+          <el-input
+            type="password"
+            v-model="form.password"
+            placeholder="请输入密码"
+          ></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="login">登录</el-button>
@@ -25,6 +29,10 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { setToken } from "@/utils/auth";
+import request from "@/utils/request";
+
+const router = useRouter();
 const formRef = ref();
 
 const rules = {
@@ -43,14 +51,17 @@ const rules = {
 };
 
 const form = reactive({
-  username: "",
-  password: "",
+  username: "admin",
+  password: "123456",
 });
 
 const login = () => {
   formRef?.value.validate((valid) => {
     if (valid) {
-      console.log("success", form);
+      request.post("/login", { data: form }).then(({ data }) => {
+        setToken(data.token);
+        router.push("/home");
+      });
     }
   });
 };

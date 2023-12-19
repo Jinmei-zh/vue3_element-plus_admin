@@ -77,6 +77,12 @@ export const routes: RouteRecordRaw[] = [
         meta: { name: "禁用菜单", icon: "edit", disabled: true },
         redirect: "/home",
       },
+      {
+        path: "login",
+        name: "login",
+        meta: { name: "登陆" },
+        redirect: "/login",
+      },
     ],
   },
   {
