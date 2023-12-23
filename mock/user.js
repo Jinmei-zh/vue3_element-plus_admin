@@ -14,18 +14,7 @@ const userInfo = {
 }
 export default [
   {
-    url: "/mock/user",
-    method: "get",
-    response: () => {
-      return {
-        code: 200,
-        message: "数据",
-        data: userInfo,
-      }
-    },
-  },
-  {
-    url: "/mock/login",
+    url: "/api/login",
     method: "post",
     response: ({ body: { data } }) => {
       if (data.username != userInfo.username || data.password != userInfo.password) {
@@ -40,6 +29,20 @@ export default [
         message: "数据",
         data: {
           token: token,
+        },
+      }
+    },
+  },
+  {
+    url: "/api/user",
+    method: "get",
+    response: (data) => {
+      return {
+        code: 200,
+        message: "数据",
+        data: {
+          data: data,
+          username: userInfo.username,
         },
       }
     },

@@ -1,8 +1,8 @@
 import request from "@/utils/request"
-import { PIResponseData } from "@/types/request"
-import { TLoginRequest, userLoginResponse, TUser } from "./user.d.ts"
+import type { PIResponseData } from "@/types/request"
+import type { TLoginRequest, userLoginResponse, TUser } from "./user.d"
 
-export function login(data: TLoginRequest): PIResponseData<userLoginResponse> {
+export function loginUser(data: TLoginRequest): PIResponseData<userLoginResponse> {
   return request.post("/login", data)
 }
 
@@ -20,15 +20,6 @@ export function logout(): PIResponseData<any> {
  */
 export function userInfo(): PIResponseData<TUser> {
   return request.get("/user")
-}
-
-export type TUserForm = {
-  id: number
-  name: string
-  phone: string
-  avatar: string
-  password?: string
-  password_confirmation?: string
 }
 
 /**

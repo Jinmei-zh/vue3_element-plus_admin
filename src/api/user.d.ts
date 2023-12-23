@@ -9,11 +9,6 @@ export type userLoginResponse = {
 }
 
 export type TUser = {
-  id: number
-  name: string
-  phone: string
+  username: string
   avatar: string
-  role_id: number
-  state: number
-  created_at: string
 }

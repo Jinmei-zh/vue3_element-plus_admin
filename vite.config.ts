@@ -17,9 +17,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
     viteMockServe({
-      logger: false,
       mockPath: "mock/",
-      watchFiles: true,
     }),
     AutoImport({
       imports: ["vue", "vue-router", "pinia"], // 自动导入
