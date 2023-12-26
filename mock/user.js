@@ -16,19 +16,20 @@ export default [
   {
     url: "/api/login",
     method: "post",
-    response: ({ body: { data } }) => {
-      if (data.username != userInfo.username || data.password != userInfo.password) {
-        return {
-          code: 400,
-          message: "用户名或密码错误",
-          data: {},
-        }
-      }
+    response: ({ body }) => {
+      // if (data.username != userInfo.username || data.password != userInfo.password) {
+      //   return {
+      //     code: 400,
+      //     message: "用户名或密码错误",
+      //     data: {},
+      //   }
+      // }
       return {
         code: 200,
         message: "数据",
         data: {
           token: token,
+          data: body,
         },
       }
     },

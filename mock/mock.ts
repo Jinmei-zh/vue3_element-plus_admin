@@ -1,5 +1,6 @@
 import { MockMethod } from "vite-plugin-mock"
 import user from "./user"
+import table from "./table"
 // import mockjs from "mockjs";
 
 // Mock.mock("/mock/user/login", (ops) => {
@@ -11,6 +12,7 @@ import user from "./user"
 
 export default [
   ...user,
+  ...table,
   // {
   //   url: "/mock/getUserInfo",
   //   method: "get",

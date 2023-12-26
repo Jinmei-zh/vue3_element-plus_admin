@@ -33,25 +33,26 @@
 </template>
 
 <script lang="ts" setup>
+import request from "@/utils/request"
 // 查询表单
 const formInline = reactive({
   user: "",
   region: "",
-});
-const onSubmit = () => {};
+})
+const onSubmit = () => {}
 
 // 表格
 const pages = reactive({
   total: 400,
   currentPage: 1,
   pageSize: 20,
-});
+})
 const handleSizeChange = (size: number) => {
-  pages.pageSize = size;
-};
+  pages.pageSize = size
+}
 const handleCurrentChange = (page: number) => {
-  pages.currentPage = page;
-};
+  pages.currentPage = page
+}
 
 const tableData = [
   {
@@ -74,7 +75,7 @@ const tableData = [
     name: "Tom",
     address: "No. 189, Grove St, Los Angeles",
   },
-];
+]
 </script>
 
 <style lang="scss"></style>

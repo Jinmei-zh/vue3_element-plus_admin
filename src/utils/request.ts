@@ -37,7 +37,6 @@ service.interceptors.response.use(
       return Promise.reject(data.message)
     }
     // 直接返回后端data的数据，后端数据格式{code:200, message:"", data: []}
-    console.log("data", data)
     return data
   },
   (error: any) => {
