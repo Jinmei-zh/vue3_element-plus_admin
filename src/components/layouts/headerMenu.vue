@@ -17,7 +17,13 @@
     <!-- 用户登陆 -->
     <div class="menu">
       <el-menu mode="horizontal" :ellipsis="false">
+        <!-- <el-menu-item index="1">语言</el-menu-item> -->
         <el-sub-menu index="1">
+          <template #title> 语言 </template>
+          <el-menu-item index="2-1">11</el-menu-item>
+          <el-menu-item @click="logout">22</el-menu-item>
+        </el-sub-menu>
+        <el-sub-menu index="2">
           <template #title>
             <el-avatar
               :size="35"
@@ -32,20 +38,27 @@
   </el-header>
 </template>
 <script lang="ts" setup>
-import { useAppStore } from "@/stores";
-import { storeToRefs } from "pinia";
-import { ArrowRight } from "@element-plus/icons-vue";
-import { removeToken } from "@/utils/auth";
+import { useAppStore } from "@/stores"
+import { storeToRefs } from "pinia"
+import { ArrowRight } from "@element-plus/icons-vue"
+import { removeToken } from "@/utils/auth"
+// import { useI18n } from "vue-i18n"
+// const { locale } = useI18n()
+
+// const changeLang = (lang: string) => {
+//   locale.value = lang
+//   localStorage.setItem("lang", lang) // 重要！下面遇到问题里解释
+// }
 
 // const sidebar = mapState(useAppStore, ["sidebar"]);
-const router = useRouter();
-const appStore = useAppStore();
-const { sidebar } = storeToRefs(appStore);
+const router = useRouter()
+const appStore = useAppStore()
+const { sidebar } = storeToRefs(appStore)
 
 const logout = (item) => {
-  removeToken();
-  router.push("/login");
-};
+  removeToken()
+  router.push("/login")
+}
 </script>
 <style less="scss" scoped>
 .el-header {

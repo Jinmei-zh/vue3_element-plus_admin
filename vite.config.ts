@@ -20,7 +20,7 @@ export default defineConfig({
       mockPath: "mock/",
     }),
     AutoImport({
-      imports: ["vue", "vue-router", "pinia"], // 自动导入
+      imports: ["vue", "vue-router", "pinia", "vue-i18n"], // 自动导入
       dts: "src/types/auto-import.d.ts",
     }),
     Components({
