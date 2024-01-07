@@ -17,12 +17,27 @@
     <!-- 用户登陆 -->
     <div class="menu">
       <el-menu mode="horizontal" :ellipsis="false">
+        <el-dropdown ref="dropdown1" trigger="hover">
+          <el-menu-item index="1">
+            <template #title> 语言 </template>
+          </el-menu-item>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item @click="switchLanguage(sLocale)" v-for="sLocale in supportedLocales" :key="`locale-${sLocale}`" :selected="locale == sLocale">{{
+                t(`locale.${sLocale}`)
+              }}</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+
+        <!-- <LanguageSwitcher /> -->
         <!-- <el-menu-item index="1">语言</el-menu-item> -->
-        <el-sub-menu index="1">
+        <!-- <el-sub-menu index="1">
           <template #title> 语言 </template>
-          <el-menu-item index="2-1">11</el-menu-item>
-          <el-menu-item @click="logout">22</el-menu-item>
-        </el-sub-menu>
+          <el-menu-item @click="switchLanguage(sLocale)" v-for="sLocale in supportedLocales" :key="`locale-${sLocale}`" :value="sLocale" :selected="locale == sLocale">{{
+            t(`locale.${sLocale}`)
+          }}</el-menu-item>
+        </el-sub-menu> -->
         <el-sub-menu index="2">
           <template #title>
             <el-avatar
@@ -42,13 +57,17 @@ import { useAppStore } from "@/stores"
 import { storeToRefs } from "pinia"
 import { ArrowRight } from "@element-plus/icons-vue"
 import { removeToken } from "@/utils/auth"
-// import { useI18n } from "vue-i18n"
-// const { locale } = useI18n()
+// import LanguageSwitcher from "../LanguageSwitcher.vue"
+import { useI18n } from "vue-i18n"
+import Trans from "@/i18n/translation"
 
-// const changeLang = (lang: string) => {
-//   locale.value = lang
-//   localStorage.setItem("lang", lang) // 重要！下面遇到问题里解释
-// }
+const { t, locale } = useI18n()
+const supportedLocales = Trans.supportedLocales
+
+const switchLanguage = async (locale: string) => {
+  // console.log("switching language", newLocale)
+  await Trans.switchLanguage(locale)
+}
 
 // const sidebar = mapState(useAppStore, ["sidebar"]);
 const router = useRouter()

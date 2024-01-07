@@ -1,0 +1,15 @@
+{
+  "locale": {
+    "zh-CN": "简体中文",
+    "en": "English"
+  },
+  "login": {
+    "username": "Username",
+    "password": "Password",
+    "login": "Login"
+  },
+  "about": {
+    "welcome": "Welcome to {website}",
+    "donations": "Donation raised:{donations}"
+  }
+}

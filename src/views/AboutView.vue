@@ -1,15 +1,8 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <!-- <h1>{{ $t("about.donations", { donations: $n(456, "currencyFormat") }) }}</h1> -->
+    <h1>{{ $t("about.welcome", { website: "后台管理系统" }) }}</h1>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>

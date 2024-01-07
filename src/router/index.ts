@@ -1,16 +1,14 @@
-import {
-  createRouter,
-  createWebHistory,
-  type RouteRecordRaw,
-} from "vue-router";
-import Layout from "@/components/layouts/index.vue";
-import HomeView from "@/views/HomeView.vue";
+import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router"
+import Layout from "@/components/layouts/index.vue"
+import HomeView from "@/views/HomeView.vue"
+import Tr from "@/i18n/translation"
 
 export const routes: RouteRecordRaw[] = [
   {
     path: "/",
     component: Layout,
     redirect: "/home",
+    beforeEnter: Tr.routeMiddleware,
     children: [
       {
         path: "/home",
@@ -91,11 +89,11 @@ export const routes: RouteRecordRaw[] = [
     meta: { name: "登陆", icon: "edit" },
     component: () => import("@/views/Login.vue"),
   },
-];
+]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.VITE_BASE_URL),
   routes: routes,
-});
+})
 
-export default router;
+export default router

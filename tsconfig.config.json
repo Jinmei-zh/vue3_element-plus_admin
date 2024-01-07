@@ -9,7 +9,8 @@
   "compilerOptions": {
     "composite": true,
     "types": [
-      "node"
+      "node",
+      "@intlify/unplugin-vue-i18n/messages"
     ]
   }
 }

@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from "node:url"
-
+import path from "path"
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import vueJsx from "@vitejs/plugin-vue-jsx"
@@ -7,6 +7,7 @@ import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 import { viteMockServe } from "vite-plugin-mock"
+import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,6 +27,9 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
       dts: "src/types/auto-component.d.ts",
+    }),
+    VueI18nPlugin({
+      include: [path.resolve(__dirname, "./src/locales/**")],
     }),
   ],
   resolve: {
