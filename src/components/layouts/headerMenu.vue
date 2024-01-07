@@ -8,11 +8,7 @@
     </div>
 
     <!-- 面包导航 -->
-    <el-breadcrumb style="flex-grow: 2" :separator-icon="ArrowRight">
-      <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-      <el-breadcrumb-item>promotion management</el-breadcrumb-item>
-      <el-breadcrumb-item>promotion list</el-breadcrumb-item>
-    </el-breadcrumb>
+    <Breadcrumb style="flex-grow: 2" />
 
     <!-- 用户登陆 -->
     <div class="menu">
@@ -35,14 +31,9 @@
 <script lang="ts" setup>
 import { useAppStore } from "@/stores"
 import { storeToRefs } from "pinia"
-import { ArrowRight } from "@element-plus/icons-vue"
 import { removeToken } from "@/utils/auth"
+import Breadcrumb from "./Breadcrumb.vue"
 import LanguageSwitcher from "../LanguageSwitcher.vue"
-import { useI18n } from "vue-i18n"
-import Trans from "@/i18n/translation"
-
-const { t, locale } = useI18n()
-const supportedLocales = Trans.supportedLocales
 
 // const sidebar = mapState(useAppStore, ["sidebar"]);
 const router = useRouter()
