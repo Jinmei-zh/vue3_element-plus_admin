@@ -1,5 +1,5 @@
 import { createI18n } from "vue-i18n"
-import zhCN from "./locales/zh-CN.json"
+import zhCN from "./locales/zh-cn.json"
 import en from "./locales/en.json"
 import numbersFormats from "./rules/numbers.js"
 
@@ -9,7 +9,7 @@ export default createI18n({
   legacy: false,
   globalInjection: true,
   messages: {
-    "zh-CN": zhCN,
+    "zh-cn": zhCN,
     en,
   },
   numbersFormats,

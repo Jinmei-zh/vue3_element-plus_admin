@@ -1,4 +1,5 @@
 import i18n from "@/i18n"
+import { useSettingStore } from "@/stores"
 
 const Trans = {
   get supportedLocales() {
@@ -7,6 +8,10 @@ const Trans = {
 
   get defaultLocale() {
     return import.meta.env.VITE_DEFAULT_LOCALE
+  },
+
+  get currentLocale() {
+    return Trans.getPeristedLocale() || Trans.defaultLocale
   },
 
   set currentLocale(locale: string) {
@@ -52,6 +57,7 @@ const Trans = {
   },
 
   async switchLanguage(locale: string) {
+    useSettingStore().locale = locale
     Trans.currentLocale = locale
     localStorage.setItem("user-locale", locale)
   },

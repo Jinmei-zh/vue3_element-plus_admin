@@ -1,7 +1,32 @@
 {
   "locale": {
-    "zh-CN": "简体中文",
+    "zh-cn": "简体中文",
     "en": "English"
+  },
+  "system": {
+    "title": "Title",
+    "language": "Language",
+    "theme": "Theme",
+    "dark": "Dark",
+    "light": "Light",
+    "logout": "Logout",
+    "profile": "Profile",
+    "changePassword": "Change Password",
+    "changeAvatar": "Change Avatar",
+    "changePhone": "Change Phone"
+  },
+  "user": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirmpassword",
+    "avatar": "Avatar",
+    "phone": "Phone",
+    "address": "Address",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "save": "Save"
   },
   "login": {
     "username": "Username",

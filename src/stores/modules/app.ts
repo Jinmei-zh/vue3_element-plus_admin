@@ -1,5 +1,5 @@
-import { reactive, toRefs } from "vue";
-import { defineStore, storeToRefs } from "pinia";
+import { reactive, toRefs } from "vue"
+import { defineStore, storeToRefs } from "pinia"
 
 export const useAppStore = defineStore("app", () => {
   const state = reactive({
@@ -9,25 +9,25 @@ export const useAppStore = defineStore("app", () => {
     },
     device: "desktop",
     size: "medium",
-  });
+  })
   const toggleSideBar = () => {
-    state.sidebar.opened = !state.sidebar.opened;
-    state.sidebar.withoutAnimation = false;
+    state.sidebar.opened = !state.sidebar.opened
+    state.sidebar.withoutAnimation = false
     if (state.sidebar.opened) {
-      state.sidebar.opened = true;
+      state.sidebar.opened = true
     } else {
-      state.sidebar.opened = false;
+      state.sidebar.opened = false
     }
-  };
+  }
   function closeSideBar(withoutAnimation: boolean) {
-    state.sidebar.opened = false;
-    state.sidebar.withoutAnimation = withoutAnimation;
+    state.sidebar.opened = false
+    state.sidebar.withoutAnimation = withoutAnimation
   }
   function toggleDevice(device: string) {
-    state.device = device;
+    state.device = device
   }
   function setSize(size: string) {
-    state.size = size;
+    state.size = size
   }
 
   return {
@@ -36,5 +36,5 @@ export const useAppStore = defineStore("app", () => {
     closeSideBar,
     toggleDevice,
     setSize,
-  };
-});
+  }
+})
