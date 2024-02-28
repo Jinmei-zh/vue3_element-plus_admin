@@ -24,7 +24,7 @@ export const routes: RouteRecordRaw[] = [
           {
             path: "/table/list",
             name: "list",
-            meta: { name: "列表" },
+            meta: { name: "列表", keepAlive: true },
             component: () => import("@/views/tables/index.vue"),
           },
         ],
