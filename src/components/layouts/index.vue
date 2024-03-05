@@ -54,6 +54,7 @@ const activeTab = ref(route.path)
 watch(
   () => route.path,
   (newPath) => {
+    console.log("newPath", newPath)
     activeTab.value = newPath
     if (!tabs.value.find((tab) => tab.path === newPath)) {
       tabs.value.push({
@@ -62,6 +63,9 @@ watch(
         keepAlive: route.meta?.keepAlive ? true : false,
       })
     }
+  },
+  {
+    immediate: true,
   }
 )
 

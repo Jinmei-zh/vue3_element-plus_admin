@@ -17,6 +17,19 @@ export const routes: RouteRecordRaw[] = [
         component: HomeView,
       },
       {
+        path: "/profile",
+        name: "profile",
+        meta: { name: "个人中心", icon: "grid" },
+        children: [
+          {
+            path: "/profile/index",
+            name: "index",
+            meta: { name: "列表", keepAlive: true },
+            component: () => import("@/views/profile/index.vue"),
+          },
+        ],
+      },
+      {
         path: "/table",
         name: "table",
         meta: { name: "表格", icon: "grid" },
