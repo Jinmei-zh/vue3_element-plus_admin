@@ -38,7 +38,10 @@
                 <el-input v-model="form.username" />
               </el-form-item>
               <el-form-item label="性别">
-                <el-input v-model="form.sex" />
+                <el-select v-model="form.sex">
+                  <el-option label="男" :value="1" />
+                  <el-option label="女" :value="0" />
+                </el-select>
               </el-form-item>
               <el-form-item label="邮箱">
                 <el-input v-model="form.email" />

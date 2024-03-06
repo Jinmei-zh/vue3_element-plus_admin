@@ -21,7 +21,7 @@
               src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2Fbf6fe5f0-4e5c-4dd1-9545-f58151164f0c%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1686918632&t=973851af485768045318f8624f767f07"
             />
           </template>
-          <el-menu-item index="2-1">{{ $t("system.profile") }}</el-menu-item>
+          <el-menu-item index="2-1" :route="{ name: 'profile' }">{{ $t("system.profile") }}</el-menu-item>
           <el-menu-item @click="logout">{{ $t("system.logout") }}</el-menu-item>
         </el-sub-menu>
       </el-menu>
